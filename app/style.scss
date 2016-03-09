@@ -1,0 +1,52 @@
+/*
+Theme Name: Vegiee  
+Author :
+Repo :  
+Version : 1.0.0
+SHA-1 :  
+
+1. Header
+2. header v2
+2. Footer 
+3. Homepage
+4. About Us 
+5. Blog list
+6. Blog Single
+7. Comments
+8. Contact
+9. Homepage 2 
+10. Shop
+11. About
+*/
+
+// ------------------------------------
+//			Core 
+// ------------------------------------
+@import url('http://fonts.googleapis.com/css?family=Lato%7CGreat+Vibes%7CRoboto%7COld+Standard+TT%7CSource+Sans+Pro:300&amp;subset=latin,latin,latin,latin,latin');
+// Variables
+@import 'scss/base/variables';
+@import '../bower_components/fontawesome/scss/variables';
+@import 'iconic/variables';
+
+
+// Bootstrap
+@import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+// Mixin
+@import 'scss/mixin/mixins';
+@import 'scss/base/base';
+
+
+// ------------------------------------
+//			Project Structure
+// ------------------------------------
+
+// module
+@import 'scss/components/components';
+// pages
+@import 'scss/page/pages';
+
+
+
+
+
+

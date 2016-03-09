@@ -1,0 +1,92 @@
+//content-newsletter
+.content-newsletter {
+	background-attachment: fixed;
+	background:url('images/homepage/paralaximage.jpg') center no-repeat;
+
+	h2 {
+		color: #fff;
+	}
+	p {
+		color: #cecece;
+	}
+	.newsletter-form  {
+		position: relative;
+		text-align: center;	
+	}
+	.form-control {		
+		outline: none;	
+		color: #fff;
+		box-shadow: none;
+		min-height: 45px;
+	}
+	.btn {
+		margin-top: 20px;		
+	}
+	img {
+		margin-bottom: 20px;
+	}
+	@include respond-to('xs') {
+		.newsletter-form {
+			padding-right: 150px;
+			display: block;
+			overflow: hidden;
+			margin:0 auto;
+			max-width: 90%;
+			
+		}
+
+		.btn {
+			position: absolute;
+			right: 0;
+			top: 0;
+			margin-top: 0;
+			min-height: 45px;
+		}
+	}
+	@include respond-to('md') {
+		.newsletter-form  {
+			max-width: 800px;
+		}
+	}
+	@include respond-to('lg') {
+		.has-image-wrap {
+			position: relative;
+			img {
+			position: absolute;
+			left: 0;
+			top: -50px;
+			}
+			.newsletter-form {
+				padding-left:200px;
+			}
+		}
+		
+	}
+
+	// color options
+	&.color-options-1 {
+		.btn { 
+				background: #e0e0e0;
+				&:hover {
+					background: #5c5c5c;
+					color: #fff;
+				}
+		}
+		.form-control { 
+			border:1px solid #8b8682;
+			background:  rgba(#8b8682,0.7);
+		}
+	}
+	&.color-options-2 {
+		background: #fff;
+		h2 {
+			color: #5c5c5c;
+		}
+		p {
+			color: #9c9c9c;
+		}
+		.form-control {
+			color: #222;
+		}
+	}
+}

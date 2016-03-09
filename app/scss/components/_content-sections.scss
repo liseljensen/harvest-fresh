@@ -1,0 +1,21 @@
+.heading {
+	.sub {
+		margin-top: -10px;
+		font-size: 20px;
+		color: #959595;
+		@include respond-to('md') {
+			font-size: 30px;
+		}
+	}
+}
+.content-section {
+	@include row();
+	padding-top: $section-v-space-small;
+	padding-bottom: $section-v-space-small;
+	@include respond-to('md') {
+		padding-top: $section-v-space;
+	padding-bottom: $section-v-space;
+	}
+}
+
+

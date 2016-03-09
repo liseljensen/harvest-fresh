@@ -1,0 +1,27 @@
+// entry contents 
+.entry-contents {
+	 p {
+	 	margin-top: 30px;
+	 }
+	 blockquote {
+	 	font-style: italic;
+	 	color: #aaaaaa;
+	 	line-height: 1.7;
+	 	border-width: 2px;
+	 	padding: 0  25px;
+	 }
+
+	 @include respond-to('sm') {
+	 	blockquote {
+	 		margin-top: 30px;
+	 		margin-bottom: 30px;
+	 	}
+	 }
+
+	 @include respond-to('md') {
+	 	blockquote {
+	 		margin-top: 50px;
+	 		margin-bottom: 50px;
+	 	}
+	 }
+}

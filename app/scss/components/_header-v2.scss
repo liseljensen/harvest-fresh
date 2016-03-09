@@ -1,0 +1,56 @@
+.banner-caption-v2 {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	h1 {
+		font-family: $fontstack2;
+		color: #fff;
+
+	}
+	.banner-image {
+		min-height: 400px;
+	}
+	@include respond-to('sm') {
+		h1 {
+			font-size: 80px;
+		}
+		bottom: 15%;
+		}
+		@include respond-to('md') {
+		h1 {
+			font-size: 120px;
+		}
+		
+		}
+		@include respond-to('lg') {
+		h1 {
+			font-size: 180px;
+		}
+		
+		}
+}
+.header-top-v-1-transparent {
+	.sub-menu {
+		li {
+				background: rgba(255,255,255,0.5);
+		}
+
+	}	
+	.navigation li a:hover, .navigation li a.active {
+		color: #000;
+	}
+	.navigation {
+		li a {
+			color: #585151;
+		}
+		a:hover {
+			color: #000;
+		}
+		a:after {
+			background-color: #000;
+		}
+	}
+	
+}

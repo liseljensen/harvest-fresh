@@ -1,0 +1,78 @@
+/* Farmers  */
+.farmer {
+	margin-top: 50px;
+	float: left;	
+	background: #f6f6f6;
+	.meta {
+		a {
+			color: #ad3516;
+		}
+	}
+	.farmer-details-content {		
+		padding: 30px;
+		@include row();
+	}
+	.farmer-details {
+		h2 {
+				font-size: 50px;
+			}
+	}
+	figure {
+		img {
+			width: 100%;
+		}
+	}
+
+	.social-links {
+		margin-top: 30px;
+		a:first-child {
+			margin-left: 0;
+		}
+		a {
+			font-size: 18px;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+		}
+	}
+
+	&.farmer-image-left {
+		figure {
+			float: left;
+			width: 100%;
+		}
+		.farmer-details {
+			float: left;
+			width: 100%;		
+			padding-right: 15px;
+
+		}
+		@include respond-to('sm') {
+				figure,  .farmer-details {
+					width: 50%;	
+				}
+			}
+	}
+	&.farmer-image-right {
+		figure {
+			width: 100%;
+			float: right;
+		}
+		.farmer-details {
+			float: left;
+			width: 100%;
+		
+		}
+		@include respond-to('sm') {
+				figure,  .farmer-details {
+					width: 50%;	
+				}
+				.farmer-details {
+					text-align: right;
+				}
+				.social-links {
+					float: right;
+				}
+			}
+	}
+}

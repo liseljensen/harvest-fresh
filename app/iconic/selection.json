@@ -1,0 +1,77 @@
+{
+	"IcoMoonType": "selection",
+	"icons": [
+		{
+			"icon": {
+				"paths": [
+					"M0 448v-96h120l240.992-241.024c-1.6-4.768-2.976-9.632-2.976-14.976 0-26.528 21.472-48 48-48 26.496 0 48 21.472 48 48 0 26.496-21.504 48-48 48-3.552 0-6.688-1.312-9.984-2.016l-210.048 210.016h619.328l-208.8-210.528c-4.128 1.152-8.064 2.528-12.512 2.528-26.496 0-48-21.504-48-48 0-26.528 21.504-48 48-48s48 21.472 48 48c0 4.896-1.44 9.376-2.816 13.856l242.144 242.144h120.672v96h-992zM795.808 924.864c-9.376 37.504-35.36 35.424-35.36 35.424l-531.040 1.024c-27.072 0-34.336-34.304-34.336-34.304l-140.384-446.56 882.368-0.832-141.248 445.248zM319.968 544h-32v160h32v-160zM319.968 736h-32v160h32v-160zM383.968 544h-31.968v160h31.968v-160zM383.968 736h-31.968v160h31.968v-160zM447.968 544h-32v160h32v-160zM447.968 736h-32v160h32v-160zM512 544h-32v160h32v-160zM512 736h-32v160h32v-160zM576 544h-32v160h32v-160zM576 736h-32v160h32v-160zM640 544h-32v160h32v-160zM640 736h-32v160h32v-160zM704 544h-32v160h32v-160zM704 736h-32v160h32v-160z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"basket",
+					"shop",
+					"cart",
+					"ecommerce",
+					"buy",
+					"purchase"
+				],
+				"grid": 32
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"order": 1,
+				"id": 0,
+				"prevSize": 32,
+				"code": 58880,
+				"name": "basket"
+			},
+			"setIdx": 0,
+			"setId": 2,
+			"iconIdx": 0
+		}
+	],
+	"height": 1024,
+	"metadata": {
+		"name": "iconic"
+	},
+	"preferences": {
+		"showGlyphs": true,
+		"showQuickUse": true,
+		"showQuickUse2": true,
+		"showSVGs": true,
+		"fontPref": {
+			"prefix": "iconic-",
+			"metadata": {
+				"fontFamily": "iconic",
+				"majorVersion": 1,
+				"minorVersion": 0
+			},
+			"metrics": {
+				"emSize": 1024,
+				"baseline": 6.25,
+				"whitespace": 50
+			},
+			"embed": false,
+			"cssVars": true,
+			"showMetadata": false,
+			"showVersion": false,
+			"showSelector": true,
+			"selector": "class",
+			"classSelector": ".iconic"
+		},
+		"imagePref": {
+			"prefix": "icon-",
+			"png": true,
+			"useClassSelector": true,
+			"color": 4473924,
+			"bgColor": 16777215
+		},
+		"historySize": 100,
+		"showCodes": false
+	}
+}

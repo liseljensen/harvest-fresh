@@ -1,0 +1,9 @@
+.btn-primary:before {
+	background-color: darken($btn-primary-bg,20%);
+}
+.btn-info:before {
+	background-color: lighten($btn-info-bg,20%);
+}
+.btn-dark:before {
+	background-color: lighten($btn-dark-bg,20%);
+}

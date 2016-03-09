@@ -1,0 +1,51 @@
+/* Contact  */
+.google-maps {
+	height: 500px;
+}
+.map-container {
+	position: relative;
+	background: #ddd;
+}
+.map-info-window {
+	background: rgba(0,0,0,0.7);
+	padding: 20px;
+	position: absolute;
+	width: 80%;
+	left: 10%;
+	top: 15%;
+	max-width: 530px;
+	h2 {
+		font-family: $fontstack1;
+		font-size: 32px;
+	}
+	p, h2 {
+		color: #fff;
+	}
+	p {
+		margin-top: 10px;
+	}
+	.fa {
+		width: 32px;
+		font-size: 15px;
+	}
+	.fa-map-marker {
+		font-size: 18px;
+	}
+	.fa-mobile {
+		font-size: 18px;
+	}
+	h2+p {
+		margin-bottom: 20px;
+	}
+	.row {
+		position: absolute;
+		height: 100%;
+		left: 0;
+		top: 0;
+	}
+	@include respond-to('md') {
+		top: 22%;
+		padding:20px 50px;
+	}
+
+}

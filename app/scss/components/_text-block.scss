@@ -1,0 +1,44 @@
+.full-text-row-v1 {
+	background: #ad3516;
+	@include row();
+	padding:  $section-v-space-small 0;
+	@include respond-to('md') {
+		padding: $section-v-space-small 0;
+	}
+
+	h3 {
+		font-family: $fontstack2;
+		color: #fff;
+		font-size: 50px;
+	}
+	.text-right {
+		text-align: left;
+		padding-top: 30px;
+	}
+	.btn {
+		color: #ad3516;
+		background: #fff;
+	}
+	@include respond-to('sm') {
+		h3 {
+			font-size: 50px;
+		}
+		.text-right {
+			text-align: right;
+		}
+	}
+	@include respond-to('md') {
+		h3 {
+			font-size: 80px;
+		}
+	}
+	@include respond-to('lg') {
+		h3 {
+			font-size: 100px;
+		}
+	}
+	.btn {
+		padding: 15px 30px;
+		margin-top:20px;
+	}
+}

@@ -1,0 +1,114 @@
+@import 'fonts';
+
+body {
+	min-width: 300px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+// padding 
+.pad-top-small {
+	padding-top: 15px;
+}
+.pad-top-medium {
+	padding-top: 25px;
+}
+.pad-top-large {
+	padding-top: 45px;
+}
+
+// Typography
+p {
+	line-height: 1.7;
+}
+
+h1, .h1, h2, .h2 {
+	@include respond-to('md') {
+		font-size: 50px;
+	}
+	@include respond-to('lg') {
+		font-size: 60px;
+	}
+}
+
+
+.row-float {
+	@include row();	
+}
+
+// form
+.form-control {
+	font-family: $fontstack1;
+}
+.input-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn {
+	font-size: 14px;
+}
+.form-control {
+	box-shadow: none;
+}
+img.align-center {
+	display: block;
+	margin:0 auto 30px;
+}
+
+// Buttons
+.btn-lg { 
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-base, $line-height-large, $btn-border-radius-large);
+}
+.btn-ghost {
+	background:none !important;
+	border:1px solid #a1a1a1;
+}
+.btn-with-icon-right {
+	i {
+		margin-left: 10px;
+	}
+}
+.vg-btn-lg {
+	@include respond-to('md') {
+		padding: 12px 25px;
+	}	
+}
+
+.btn {
+	text-transform: uppercase;
+	font-family: $fontstack3;
+}
+.btn-outline {
+	font-size: 16px;
+	color: #4c4c4c;
+	background: transparent;
+	border:1px solid #4c4c4c;
+	&:hover , &.active{
+		color: #fff;
+		background: $color-primary;
+	}
+}
+
+.btn-dark {
+	@include button-variant(#fff, $btn-dark-bg, $btn-dark-bg);
+}
+
+// Pagination 
+.pagination > li {
+	margin-right: 10px;
+	display: inline-block;
+}
+.pagination > li > a, .pagination > li > span {
+	padding: 2px 8px;
+}
+.pagination > li:last-child > a, 
+.pagination > li:last-child > span,
+.pagination > li:first-child > a, 
+.pagination > li:first-child > span {
+	border-radius: 0px;
+}
+
+blockquote {
+	font-size: 14px;
+	border-left-color: #515151;
+	border-left-width: 4px;
+}
+

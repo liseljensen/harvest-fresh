@@ -209,6 +209,7 @@ gulp.task('serve', ['styles','vendorStyles','modernizr','vendorScripts','mainScr
   // watch for changes
   gulp.watch([
     app+'/*.html',
+    app+'*.html',
     app+'/scripts/**/*.js',
     app+'/images/**/*',
     app+'/**/*.css',

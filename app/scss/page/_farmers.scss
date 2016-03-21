@@ -3,6 +3,8 @@
 	margin-top: 50px;
 	float: left;	
 	background: #f6f6f6;
+    border: 5px solid lightgray; 
+    border-radius: 10px; 
 	.meta {
 		a {
 			color: #ad3516;
@@ -24,7 +26,9 @@
 	}
 
 	.social-links {
-		margin-top: 30px;
+		padding-top: 30px;
+        float: none; 
+        clear: both; 
 		a:first-child {
 			margin-left: 0;
 		}
@@ -35,6 +39,19 @@
 			line-height: 40px;
 		}
 	}
+    .product-links {
+        padding-top: 30px;
+        float: none; 
+        clear: both;
+        a {
+            margin: 0 10px;
+            padding: 10px; 
+            &:first-child {
+                padding-left: 0; 
+                margin-left: 0; 
+            }
+        }
+    }
 
 	&.farmer-image-left {
 		figure {

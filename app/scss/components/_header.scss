@@ -38,7 +38,7 @@ $header-top-v-1-color:#a8a8a9;
 		position: fixed;
 		z-index: 15;
 		top: 0;		
-		background: rgba(255,255,255,0.6);
+		background: rgba(255,255,255,0.9);
 		.container {
 			position: relative;
 		}
@@ -335,19 +335,24 @@ $header-top-v-1-color:#a8a8a9;
 
 @include respond-to('md') {
 	.sticky-menu{
-	position: fixed;
-    top: 0;
-    z-index:9999;
+        position: fixed;
+        top: 0;
+        z-index:9999;
+        height: 75px;
+        padding: 0; 
+        .header-top-right-v1 {
+            margin-top: 10px; 
+        }
 	}
-	.header-top-v-1 .logo.logosticky{
-	margin-top: 0;
-	top:-25px;
-	transform:all 0.3s ease-in-out;
-	img{
-		transform:scale(0.7);
-	}
-	
-}
+	.header-top-v-1 .logo.logosticky {
+        margin-top: 0;
+        top:-25px;
+        transform:all 0.3s ease-in-out;
+        img {
+            margin-top: -20px; 
+            transform:scale(0.5);
+        }
+    }
 }
 
 .banner-inner {

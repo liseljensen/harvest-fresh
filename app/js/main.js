@@ -1,4 +1,134 @@
 'use strict';
+var app = angular.module('app', [
+  'ngRoute', 'ngAnimate'
+]);
+
+app.config(['$routeProvider', function ($routeProvider) {
+    $routeProvider
+    // Home
+        .when("/", {
+        templateUrl: "partials/home.html"
+        , controller: "PageCtrl"
+    })
+
+//    // Pages
+//    .when("/work", {
+//        templateUrl: "partials/work.html"
+//        , controller: "PageCtrl"
+//    })
+//    
+//    // When url is /work-detail, look for a var and call it proj
+//    .when("/work-detail/:proj", {
+//        templateUrl: "partials/work-detail.html"
+//        , controller: "WorkDetailCtrl"
+//    })
+//
+//    .when("/experiences", {
+//        templateUrl: "partials/experiences.html"
+//        , controller: "PageCtrl"
+//    })
+//    
+////    .when("/blog", {
+////        templateUrl: "partials/blog.html"
+////        , controller: "PageCtrl"
+////    })
+//    
+//    .when("/contact", {
+//        templateUrl: "partials/contact.html"
+//        , controller: "PageCtrl"
+//    })
+//
+//    // else 404
+//    .otherwise("/404", {
+//        templateUrl: "partials/404.html"
+//        , controller: "PageCtrl"
+//    });
+}]);
+
+app.run(function($rootScope, $location) {
+    $rootScope.$on('$routeChangeSuccess', function () {
+
+        // Check path and hide nav if it includes work detail
+        var path = $location.path(),
+            findWorkDetail = path.indexOf('work-detail');
+        
+        if (findWorkDetail !== -1) {
+             $rootScope.hideHeader = true;
+             $rootScope.hideFooter = true;
+        }
+        else {
+            $rootScope.hideHeader = false;
+            $rootScope.hideFooter = false;
+        }
+
+    })
+});
+
+app.directive("banner", function() {
+  return {
+    template: '<ng-include src="getTemplateUrl()"/>',
+    //templateUrl: unfortunately has no access to $scope.user.type
+    restrict: 'E',
+    controller: function($scope, $rootScope, $location) {
+      //function used on the ng-include to resolve the template
+      $scope.getTemplateUrl = function() {
+          console.log('get template url');
+          return "partials/banners/home.html";
+         // var path = $location.path()
+
+      }
+    }
+  };
+});
+app.controller('PageCtrl', function ($scope) {
+    console.log('Page Controller Called');
+    // Add class page-effect
+    //$scope.pageClass = 'page-effect';
+});
+
+app.controller("featuredRecipes", function ($scope) {
+    // Create array of project objects
+    $scope.recipes = [
+        {
+            num: 1,
+            src: "Good-Choices-Cover.jpg",
+            description: 'Good Choices',
+            url_details: "good-choices"
+        }
+        , {
+            num: 2,
+            src: "Careers-Cover.jpg",
+            description: 'Simplot Careers',
+            url_details: "careers"
+        }
+        , {
+            num: 3,
+            src: "Fert-App-Cover.jpg",
+            description: 'Fertilizer Spread Rates App',
+            url_details: "fert-app"
+        }
+        , {
+            num: 4,
+            src: "Fall-Harvest-Cover.jpg",
+            description: 'Fall Harvest',
+            url_details: "fall-harvest"
+        }
+        , {
+            num: 5,
+            src: "WWL-Cover.jpg",
+            description: 'Film Festival',
+            url_details: "wwl"
+        }
+        , {
+            num: 6,
+            src: "Brand-Cover.jpg",
+            description: 'Simplot Brand',
+            url_details: "brand"
+        }
+    ];
+
+});
+
 /* --------------- WAYPOINT ------------------ */
 	function wayPoint() {
 		jQuery('.main-header-v1').waypoint(function() {

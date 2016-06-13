@@ -215,7 +215,8 @@ gulp.task('serve', ['styles','vendorStyles','modernizr','vendorScripts','mainScr
     app+'/**/*.css',
   ]).on('change', reload);
   gulp.watch(app+'/**/*.scss', ['styles','vendorStyles']);
-  gulp.watch(app+'/scripts/**/*.js', ['mainScripts','lint']);
+  //gulp.watch(app+'/scripts/**/*.js', ['mainScripts','lint']);
+  gulp.watch(app+'/js/**/*.js', ['mainScripts']);
 });
 // Live Serve Added After build
 gulp.task('serve:dist', function () {

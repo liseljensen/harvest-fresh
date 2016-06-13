@@ -1,0 +1,81 @@
+<!-- Content Section 2 -->
+<section id="featured-recipes" class="content-section content-2">
+<div class="container">
+  <div class="row pad-top-large">
+	  <img src="images/homepage/sprite.png" alt="Featured Recipes" />
+      <div class="farming-tipps-slider">
+    <div class="owl-carousel" ng-controller="featuredRecipes">
+      <div class="item" ng-repeat="recipe in recipes">
+        <div class="text-block-v1">
+          <h3>{{recipe.description}}</h3>
+          <img class="img-responsive" ng-src="{{product.src}}" alt="Image of Smoothie" />
+          <p class="text-center"><a href="#" class="btn btn-info hvr-shutter-out-vertical vg-btn-lg">view recipe</a></p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  </div>
+</div>
+</section>
+<!-- Content Section 2 // -->
+<!-- Content Section 1 -->
+<section id="story" class="content-section content-1">
+<div class="container">
+  <div class="col-md-6  content-block">
+	<h2>Harvest Fresh Story</h2>
+    <h3>Incredible Popularity. <br><span>All-natural Goodness.</span></h3>
+    <p>We start with the finest hand-picked Hass avocados, then let them ripen to perfection. What you get is natural goodness and consistency every time with seamless recipe integration across the menu. From slices and dices to smooth and chunky, we have it all, all year long.</p>
+    <ul>
+        <li>100% Hass avocados provide rich, nutty flavor and creamy texture</li>
+        <li>All natural ingredients with no additives or preservatives for fresh-like flavor</li>
+        <li>Full line of offerings from guacamoles and pulp to cut fruit</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <img src="images/homepage/story-image.jpg" class="img-responsive" alt="Picture of Avocados" />
+  </div>
+</div>
+</section>
+<!-- Content Section 1 // -->
+
+<!-- Content Section 5 -->
+<section id="products" class="content-section content-5">
+<div class="container">
+  <div class="row heading">
+    <div class="col-xs-12">
+      <h2>Products</h2>
+    </div>
+  </div>
+  <div class="row pad-top-large">
+    <div class="col-sm-7">
+      <div class="image-block-v1 big">
+        <img src="images/homepage/guac-cover.jpg" height="721" width="669" alt="">
+        <div class="block-meta-v1">
+			<h4>Guacamole</h4>
+          <p><a class="btn btn-primary hvr-shutter-out-vertical vg-btn-lg">Learn More</a></p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="image-block-v1">
+        <img src="images/homepage/pulp-cover.jpg" height="343" width="470" alt="">
+        <div class="block-meta-v1">
+			<h4>Pulp</h4>
+          <p><a class="btn btn-primary hvr-shutter-out-vertical vg-btn-lg">Learn More</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="image-block-v1">
+        <img src="images/homepage/cut-cover.jpg" height="343" width="470" alt="">
+        <div class="block-meta-v1">
+          <h4>Cut Fruit</h4>
+          <p><a class="btn btn-primary hvr-shutter-out-vertical vg-btn-lg">Learn More</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

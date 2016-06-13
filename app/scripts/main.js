@@ -1,4 +1,9 @@
 'use strict';
+
+//var app = angular.module('app', [
+//  'ngRoute', 'ngAnimate'
+//]);
+
 /* --------------- WAYPOINT ------------------ */
 	function wayPoint() {
 		jQuery('.main-header-v1').waypoint(function() {

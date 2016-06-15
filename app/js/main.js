@@ -11,11 +11,16 @@ app.config(['$routeProvider', function ($routeProvider) {
         , controller: "PageCtrl"
     })
 
-//    // Pages
-//    .when("/work", {
-//        templateUrl: "partials/work.html"
-//        , controller: "PageCtrl"
-//    })
+    // Pages
+    .when("/guacamole", {
+        templateUrl: "partials/guacamole.html"
+        , controller: "PageCtrl"
+    })
+	
+	.when("/pulp", {
+        templateUrl: "partials/pulp.html"
+        , controller: "PageCtrl"
+    })
 //    
 //    // When url is /work-detail, look for a var and call it proj
 //    .when("/work-detail/:proj", {
@@ -72,9 +77,20 @@ app.directive("banner", function() {
     controller: function($scope, $rootScope, $location) {
       //function used on the ng-include to resolve the template
       $scope.getTemplateUrl = function() {
-          console.log('get template url');
-          return "partials/banners/home.html";
-         // var path = $location.path()
+		  var path = $location.path(),
+              findWorkDetail = path.indexOf('guacamole');
+		  	console.log('guac' + findWorkDetail);
+		  		
+		  	switch(true) {
+				case (path.indexOf('guacamole') === 1):
+					return "partials/banners/guacamole.html";
+					break;
+				case (path.indexOf('pulp') === 1):
+					return "partials/banners/pulp.html";
+					break;
+				default:
+					return "partials/banners/home.html";
+			}
 
       }
     }
@@ -86,48 +102,240 @@ app.controller('PageCtrl', function ($scope) {
     //$scope.pageClass = 'page-effect';
 });
 
-app.controller("featuredRecipes", function ($scope) {
+app.controller("featuredRecipes", function ($scope, $window) {
     // Create array of project objects
     $scope.recipes = [
         {
             num: 1,
-            src: "Good-Choices-Cover.jpg",
-            description: 'Good Choices',
+            src: "/images/recipes/featured/AvoCoconutSmothie.jpg",
+            description: 'Avocado Coconut Smoothie',
             url_details: "good-choices"
         }
         , {
             num: 2,
-            src: "Careers-Cover.jpg",
-            description: 'Simplot Careers',
+            src: "/images/recipes/featured/CouscousAvoSalad.jpg",
+            description: 'Couscous and Avocado Salad',
             url_details: "careers"
         }
         , {
             num: 3,
-            src: "Fert-App-Cover.jpg",
-            description: 'Fertilizer Spread Rates App',
+            src: "/images/recipes/featured/CouscousAvoSalad.jpg",
+            description: 'Chimichurri Avocado Dressing',
             url_details: "fert-app"
         }
         , {
             num: 4,
-            src: "Fall-Harvest-Cover.jpg",
-            description: 'Fall Harvest',
+            src: "/images/recipes/featured/SpcyFarmFieldBrk.jpg",
+            description: 'Spicy Farm & Field Breakfast',
             url_details: "fall-harvest"
         }
         , {
             num: 5,
-            src: "WWL-Cover.jpg",
-            description: 'Film Festival',
+            src: "/images/recipes/featured/ZestyBrkSand.jpg",
+            description: 'Zesty Breakfast Sandwich',
             url_details: "wwl"
         }
         , {
             num: 6,
-            src: "Brand-Cover.jpg",
-            description: 'Simplot Brand',
+            src: "/images/recipes/featured/AvocadoCrostini.jpg",
+            description: 'Avocado Crostini',
             url_details: "brand"
         }
     ];
-
+	
+	$scope.onEnd = function(){
+		$window.jQuery('.owl-carousel').owlCarousel({
+			loop:false,
+			margin:30,
+			nav:true,
+			navText:['<span class="glyphicon glyphicon-chevron-left"></span>','<span class="glyphicon glyphicon-chevron-right"></span>'],
+			responsive:{
+				0:{
+					items:1
+				},
+			   992:{
+					items:3
+				}
+			}
+		});
+	};
 });
+
+app.directive("repeatEnd", function(){
+	return {
+		restrict: "A",
+		link: function (scope, element, attrs) {
+			console.log(scope.$last)
+			if (scope.$last) {
+				console.log('last');
+				scope.$eval(attrs.repeatEnd);
+			}
+		}
+	};
+});
+
+app.controller("products", function ($scope, $window) {
+    // Create array of project objects
+    $scope.products = [
+        {
+            type: "guacamole",
+			name: "Western Guacamole",
+			id: "western-guac",
+            src: "/images/products/guac-western.jpg",
+            description: 'Chunky texture and homemade flavor seasoned with onion, red bell pepper and a touch of jalapeño',
+			application: {
+				idea: "Add Harvest Fresh™ Western Guacamole to a vegetarian wrap with white beans, red cabbage & cheddar.",
+				link: "",
+				image: "/images/recipes/applications/W_AvoBeanWrap.jpg"
+			},
+			nutritionals: {
+				image: "nutritional-western-guacamole.gif",
+				pdf: "guac-western.pdf"
+			},
+			skus: [
+				{
+					sku: "1943425",
+					pack_type: "12/1",
+					portion: "Bag",
+					weight: "12/14",
+					case_dim: "11.375\" x 8.875\" x 6\"",
+					case_cube: "0.30",
+					cases: "17 x 8"
+				},
+				{
+					sku: "029830",
+					pack_type: "6/3",
+					portion: "Bag",
+					weight: "18/20",
+					case_dim: "12.625\" x 8\" x 8.5\"",
+					case_cube: "0.43",
+					cases: "18 x 6"
+				},
+				{
+					sku: "012641",
+					pack_type: "6/2 - chilled",
+					portion: "Bag",
+					weight: "12/14",
+					case_dim: "15.875\" x 9.875\" x 3.75\"",
+					case_cube: "0.28",
+					cases: "12 x 8"
+				}
+				
+			]
+        },
+		{
+            type: "guacamole",
+			name: "Extreme Supreme®",
+			id: "extreme-supreme",
+            src: "/images/products/guac-extreme.jpg",
+            description: 'Big avocado chunks with tomato, onion and cilantro for homemade texture and flavor.',
+			application: {
+				idea: "Mix Harvest Fresh™ Extreme Supreme® Guacamole with your favorite egg salad and serve on a pita with a side of fresh veggies.",
+				link: "",
+				image: "/images/recipes/applications/Ex_AvoEggSaladSand.jpg"
+			},
+			nutritionals: {
+				image: "nutritional-extreme-supreme.gif",
+				pdf: "extreme-supreme.pdf"
+			},
+			skus: [
+				{
+					sku: "932666",
+					pack_type: "12/1",
+					portion: "Bag",
+					weight: "12/14",
+					case_dim: "11.375\" x 8.875\" x 6\"",
+					case_cube: "0.30",
+					cases: "17 x 8"
+				},
+				{
+					sku: "935667",
+					pack_type: "6/3",
+					portion: "Bag",
+					weight: "18/20",
+					case_dim: "12.625\" x 8\" x 8.5\"",
+					case_cube: "0.43",
+					cases: "18 x 6"
+				},
+				{
+					sku: "012672",
+					pack_type: "6/2 - chilled",
+					portion: "Bag",
+					weight: "12/14",
+					case_dim: "15.875\" x 9.875\" x 3.75\"",
+					case_cube: "0.28",
+					cases: "12 x 8"
+				}
+				
+			]
+        },
+		{
+            type: "guacamole",
+			name: "Zesty Guacamole",
+			id: "zesty-guac",
+            src: "/images/products/guac-zesty.jpg",
+            description: 'Featuring a blend of peppers for the perfect kick to delight and excite.',
+			application: {
+				idea: "Add Harvest Fresh™ Zesty Guacamole to Mac n' Cheese for a creamy, spicy twist on a traditional favorite.",
+				link: "",
+				image: "/images/recipes/applications/Z_ZestyMacCheese.jpg"
+			},
+			nutritionals: {
+				image: "nutritional-zesty-guacamole.gif",
+				pdf: "guac-zesty.pdf"
+			},
+			skus: [
+				{
+					sku: "030294",
+					pack_type: "12/1",
+					portion: "Bag",
+					weight: "12/14",
+					case_dim: "11.375\" x 8.875\" x 6\"",
+					case_cube: "0.30",
+					cases: "17 x 8"
+				},
+				{
+					sku: "030287",
+					pack_type: "6/3",
+					portion: "Bag",
+					weight: "18/20",
+					case_dim: "12.625\" x 8\" x 8.5\"",
+					case_cube: "0.43",
+					cases: "18 x 6"
+				}
+			]
+        },
+		{
+            type: "guacamole",
+			name: "Especial",
+			id: "especial",
+            src: "/images/products/guac-especial.jpg",
+            description: 'Perfectly ripened avocado chunks with jalapeño, cilantro, garlic, tomato and seasonings. Simply thaw, mash in the bag and serve.',
+			application: {
+				idea: "Top a flatbread with Harvest Fresh™ Especial Guacamole and veggies for an especially delicious flatbread.",
+				link: "",
+				image: "/images/recipes/applications/Es_FlatBrdEspecial.jpg"
+			},
+			nutritionals: {
+				image: "nutritional-especial.gif",
+				pdf: "especial.pdf"
+			},
+			skus: [
+				{
+					sku: "021087",
+					pack_type: "15/1",
+					portion: "Bag",
+					weight: "15/17",
+					case_dim: "15.625\" x 9.625\" x 9.25\"",
+					case_cube: "0.91",
+					cases: "9 x 9"
+				}
+			]
+        }
+       
+    ];
+});
+
 
 /* --------------- WAYPOINT ------------------ */
 	function wayPoint() {
@@ -206,21 +414,7 @@ jQuery(document).ready(function(){
 		event.preventDefault();
 		jQuery('.header-search').toggleClass('state-show');
 	});
-	// Owl Slider
-	jQuery('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:30,
-    nav:true,
-    navText:['<span class="glyphicon glyphicon-chevron-left"></span>','<span class="glyphicon glyphicon-chevron-right"></span>'],
-    responsive:{
-        0:{
-            items:1
-        },
-       992:{
-            items:3
-        }
-    }
-	});
+	
 	
 	// Ajax Contact form Submit
 	jQuery('.contact-form form').on('submit', function(event){

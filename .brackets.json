@@ -1,0 +1,11 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/wamp/www/harvest-fresh/bower_components/jquery/src/manipulation/var/rleadingWhitespace.js",
+        "C:/wamp/www/harvest-fresh/bower_components/jquery/src/manipulation/var/rscriptType.js",
+        "C:/wamp/www/harvest-fresh/bower_components/jquery/src/manipulation/var/rtagName.js",
+        "C:/wamp/www/harvest-fresh/bower_components/jquery/src/manipulation/buildFragment.js",
+        "C:/wamp/www/harvest-fresh/bower_components/jquery/src/manipulation/createSafeFragment.js",
+        "isotope/js/layout-modes/vertical.js",
+        "C:/wamp/www/harvest-fresh/bower_components/jquery/src/manipulation/getAll.js"
+    ]
+}

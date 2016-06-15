@@ -4,17 +4,16 @@
   <div class="row pad-top-large">
 	  <img src="images/homepage/sprite.png" alt="Featured Recipes" />
       <div class="farming-tipps-slider">
-    <div class="owl-carousel" ng-controller="featuredRecipes">
-      <div class="item" ng-repeat="recipe in recipes">
-        <div class="text-block-v1">
-          <h3>{{recipe.description}}</h3>
-          <img class="img-responsive" ng-src="{{product.src}}" alt="Image of Smoothie" />
-          <p class="text-center"><a href="#" class="btn btn-info hvr-shutter-out-vertical vg-btn-lg">view recipe</a></p>
-        </div>
-      </div>
-    </div>
-    
-  </div>
+		<div class="owl-carousel" ng-controller="featuredRecipes">
+		  <div class="item" ng-repeat="recipe in recipes" repeat-end="onEnd()">
+			<div class="text-block-v1">
+			  <h3>{{recipe.description}}</h3>
+			  <img class="img-responsive" ng-src="{{recipe.src}}" alt="Image of Smoothie" />
+			  <p class="text-center"><a href="#" class="btn btn-info hvr-shutter-out-vertical vg-btn-lg">view recipe</a></p>
+			</div>
+		  </div>
+		</div>
+  	</div>
   </div>
 </div>
 </section>
@@ -53,7 +52,7 @@
         <img src="images/homepage/guac-cover.jpg" height="721" width="669" alt="">
         <div class="block-meta-v1">
 			<h4>Guacamole</h4>
-          <p><a class="btn btn-primary hvr-shutter-out-vertical vg-btn-lg">Learn More</a></p>
+          <p><a class="btn btn-primary hvr-shutter-out-vertical vg-btn-lg" href="#/guacamole">Learn More</a></p>
         </div>
         
       </div>
